@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.RentalBikes.Service", "Altkom.RentalBikes.Service\Altkom.RentalBikes.Service.csproj", "{C1BE788B-D5EA-44AB-8B58-85252DE45527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.RentalBikes.Models", "Altkom.RentalBikes.Models\Altkom.RentalBikes.Models.csproj", "{C4E9CED6-72F6-4ADE-9635-ABEDF1473CE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.RentalBikes.Interfaces", "Altkom.RentalBikes.Interfaces\Altkom.RentalBikes.Interfaces.csproj", "{E370A3D8-B4C7-403E-97AA-95D9F254C1CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.RentalBikes.Services", "Altkom.RentalBikes.Services\Altkom.RentalBikes.Services.csproj", "{B30BF349-2F7D-444B-B6C0-A4D10D520AB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.RentalBikes.ConsoleClient", "Altkom.RentalBikes.ConsoleClient\Altkom.RentalBikes.ConsoleClient.csproj", "{5FD3C66E-D28F-4167-B897-43D5DB03EE11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.RentalBikes.MicroService", "Altkom.RentalBikes.MicroService\Altkom.RentalBikes.MicroService.csproj", "{006032B6-C04E-4A76-B53B-6E6020B44D10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1BE788B-D5EA-44AB-8B58-85252DE45527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1BE788B-D5EA-44AB-8B58-85252DE45527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1BE788B-D5EA-44AB-8B58-85252DE45527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1BE788B-D5EA-44AB-8B58-85252DE45527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E9CED6-72F6-4ADE-9635-ABEDF1473CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E9CED6-72F6-4ADE-9635-ABEDF1473CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E9CED6-72F6-4ADE-9635-ABEDF1473CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E9CED6-72F6-4ADE-9635-ABEDF1473CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E370A3D8-B4C7-403E-97AA-95D9F254C1CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E370A3D8-B4C7-403E-97AA-95D9F254C1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E370A3D8-B4C7-403E-97AA-95D9F254C1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E370A3D8-B4C7-403E-97AA-95D9F254C1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30BF349-2F7D-444B-B6C0-A4D10D520AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30BF349-2F7D-444B-B6C0-A4D10D520AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30BF349-2F7D-444B-B6C0-A4D10D520AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30BF349-2F7D-444B-B6C0-A4D10D520AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FD3C66E-D28F-4167-B897-43D5DB03EE11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD3C66E-D28F-4167-B897-43D5DB03EE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD3C66E-D28F-4167-B897-43D5DB03EE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD3C66E-D28F-4167-B897-43D5DB03EE11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006032B6-C04E-4A76-B53B-6E6020B44D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006032B6-C04E-4A76-B53B-6E6020B44D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006032B6-C04E-4A76-B53B-6E6020B44D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006032B6-C04E-4A76-B53B-6E6020B44D10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
