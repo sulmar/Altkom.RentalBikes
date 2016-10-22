@@ -9,6 +9,9 @@ using Altkom.RentalBikes.Service.Handlers;
 using Altkom.RentalBikes.Service.Formatters;
 using Altkom.RentalBikes.Service.Filters;
 using FluentValidation.WebApi;
+using Microsoft.Practices.Unity;
+using Altkom.RentalBikes.Interfaces;
+using Altkom.RentalBikes.Services;
 
 namespace Altkom.RentalBikes.Service
 {
@@ -37,6 +40,17 @@ namespace Altkom.RentalBikes.Service
 
             config.Filters.Add(new ExecutionTimeFilterAttribute());
             config.Filters.Add(new ValidationModelStateAttribute());
+
+            // Przykład wstrzykiwania zależności (Dependency Injection)
+            var container = new UnityContainer();
+            container.RegisterType<IBikesService, MockBikesService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IStationsService, MockStationsService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IUsersService, MockUsersService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IRentalsService, MockRentalsService>(new HierarchicalLifetimeManager());
+
+            config.DependencyResolver = new UnityResolver(container);
+
+
 
             FluentValidationModelValidatorProvider.Configure(config);
         }

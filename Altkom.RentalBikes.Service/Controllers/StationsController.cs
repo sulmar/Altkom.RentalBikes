@@ -14,11 +14,15 @@ namespace Altkom.RentalBikes.Service.Controllers
 {
     public class StationsController : BaseApiController<Station, IStationsService, int>
     {
-        public StationsController()
-            : base(new MockStationsService())
+        public StationsController(IStationsService service) : base(service)
         {
-
         }
+
+        //public StationsController()
+        //    : base(new MockStationsService())
+        //{
+
+        //}
 
         //[HttpGet]
         //public IHttpActionResult Find(double latitude, double longitude)

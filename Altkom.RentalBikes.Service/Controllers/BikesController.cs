@@ -13,8 +13,17 @@ namespace Altkom.RentalBikes.Service.Controllers
 {
     public class BikesController : ApiController
     {
-        private readonly IBikesService BikesService = new MockBikesService();
+       // private readonly IBikesService Service = new MockBikesService();
 
+        private readonly IBikesService Service;
+
+
+
+        public BikesController(IBikesService service)
+        {
+            this.Service = service;
+        }
+        
 
         /// <summary>
         /// Pobierz rowery
@@ -22,18 +31,18 @@ namespace Altkom.RentalBikes.Service.Controllers
         /// <returns></returns>
         public IList<Bike> Get()
         {
-            return BikesService.GetBikes();
+            return Service.GetBikes();
         }
 
         public Bike GetByNumber([FromUri] string number)
         {
-            return BikesService.GetBike(number);
+            return Service.GetBike(number);
         }
 
         [Route("api/bikes/{bikeId:int}")]
         public IHttpActionResult Get(int bikeId)
         {
-            var bike = BikesService.GetBike(bikeId);
+            var bike = Service.GetBike(bikeId);
 
             if (bike == null)
                 return NotFound();
@@ -44,7 +53,7 @@ namespace Altkom.RentalBikes.Service.Controllers
         [Route("api/bikes/{number}")]
         public Bike Get(string number)
         {
-            return BikesService.GetBike(number);
+            return Service.GetBike(number);
         }
 
         public IHttpActionResult Post(Bike bike)
@@ -54,7 +63,7 @@ namespace Altkom.RentalBikes.Service.Controllers
             //    return BadRequest(ModelState);
             //}
 
-            BikesService.AddBike(bike);
+            Service.AddBike(bike);
 
             return CreatedAtRoute("DefaultApi", new { id = bike.BikeId }, bike);
         }
@@ -62,20 +71,20 @@ namespace Altkom.RentalBikes.Service.Controllers
         [Route("api/bikes/{id}")]
         public void Put(int id, Bike bike)
         {
-            BikesService.UpdateBike(bike);
+            Service.UpdateBike(bike);
         }
 
         [Route("api/bikes/{id}")]
         public void Delete(int id)
         {
-            BikesService.RemoveBike(id);
+            Service.RemoveBike(id);
         }
 
         [HttpHead]
         [Route("api/bikes/{id}")]
         public IHttpActionResult Head(int id)
         {
-            var bike = BikesService.GetBike(id);
+            var bike = Service.GetBike(id);
 
             if (bike == null)
                 return NotFound();

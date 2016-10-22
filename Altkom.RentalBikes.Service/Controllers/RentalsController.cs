@@ -12,10 +12,8 @@ namespace Altkom.RentalBikes.Service.Controllers
 {
     public class RentalsController : BaseApiController<Rental, IRentalsService, int>
     {
-        public RentalsController()
-            : base(new MockRentalsService())
+        public RentalsController(IRentalsService service) : base(service)
         {
-
         }
     }
 }

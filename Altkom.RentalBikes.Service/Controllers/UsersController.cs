@@ -12,11 +12,8 @@ namespace Altkom.RentalBikes.Service.Controllers
 {
     public class UsersController : BaseApiController<User, IUsersService, int>
     {
-        public UsersController()
-            : base(new MockUsersService())
+        public UsersController(IUsersService service) : base(service)
         {
-
         }
-
     }
 }
