@@ -30,9 +30,19 @@ namespace Altkom.RentalBikes.Services
             rentals.Add(item);
         }
 
+        public Task AddAsync(Rental item)
+        {
+            return Task.Run(() => Add(item));
+        }
+
         public void Delete(int id)
         {
             throw new NotSupportedException();
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            return Task.Run(() => Delete(id));
         }
 
         public IList<Rental> Get()
@@ -45,9 +55,24 @@ namespace Altkom.RentalBikes.Services
             return rentals.SingleOrDefault(r => r.Id == id);
         }
 
+        public Task<IList<Rental>> GetAsync()
+        {
+            return Task.Run(() => Get());
+        }
+
+        public Task<Rental> GetAsync(int id)
+        {
+            return Task.Run(() => Get(id));
+        }
+
         public void Update(Rental item)
         {
             throw new NotSupportedException();
+        }
+
+        public Task UpdateAsync(Rental item)
+        {
+            return Task.Run(() => Update(item));
         }
     }
 }

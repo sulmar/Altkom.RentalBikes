@@ -20,5 +20,15 @@ namespace Altkom.RentalBikes.Interfaces
 
         void Delete(TKey id);
 
+        Task<IList<TItem>> GetAsync();
+
+        Task<TItem> GetAsync(TKey id);
+
+        Task AddAsync(TItem item);
+
+        Task UpdateAsync(TItem item);
+
+        Task DeleteAsync(TKey id);
+
     }
 }

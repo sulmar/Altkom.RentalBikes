@@ -25,11 +25,21 @@ namespace Altkom.RentalBikes.Services
             users.Add(item);
         }
 
+        public Task AddAsync(User item)
+        {
+            return Task.Run(() => Add(item));
+        }
+
         public void Delete(int id)
         {
             var user = Get(id);
 
             users.Remove(user);
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            return Task.Run(() => Delete(id));
         }
 
         public IList<User> Get()
@@ -42,11 +52,26 @@ namespace Altkom.RentalBikes.Services
             return users.SingleOrDefault(u => u.Id == id);
         }
 
+        public Task<IList<User>> GetAsync()
+        {
+            return Task.Run(() => Get());
+        }
+
+        public Task<User> GetAsync(int id)
+        {
+            return Task.Run(() => Get(id));
+        }
+
         public void Update(User item)
         {
             var foundUser = Get(item.Id);
 
             foundUser = item;
+        }
+
+        public Task UpdateAsync(User item)
+        {
+            return Task.Run(() => Update(item));
         }
     }
 }

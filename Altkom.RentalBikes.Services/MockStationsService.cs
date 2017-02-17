@@ -44,12 +44,21 @@ namespace Altkom.RentalBikes.Services
             stations.Add(item);
         }
 
+        public Task AddAsync(Station item)
+        {
+            return Task.Run(() => Add(item));
+        }
+
         public void Delete(int id)
         {
             stations.Remove(Get(id));
         }
 
-        
+        public Task DeleteAsync(int id)
+        {
+            return Task.Run(() => Delete(id));
+        }
+
         public Station Find(Location location)
         {
             var station = stations
@@ -82,11 +91,26 @@ namespace Altkom.RentalBikes.Services
                 .SingleOrDefault(s => s.StationId == id);
         }
 
+        public Task<IList<Station>> GetAsync()
+        {
+            return Task.Run(() => Get());
+        }
+
+        public Task<Station> GetAsync(int id)
+        {
+            return Task.Run(() => Get(id));
+        }
+
         public void Update(Station item)
         {
             var station = Get(item.StationId);
 
             station = item;
+        }
+
+        public Task UpdateAsync(Station item)
+        {
+            return Task.Run(() => Update(item));
         }
     }
 }

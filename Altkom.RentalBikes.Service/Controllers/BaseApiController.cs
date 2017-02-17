@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Altkom.RentalBikes.Service.Controllers
@@ -21,17 +22,17 @@ namespace Altkom.RentalBikes.Service.Controllers
         }
 
         
-        public virtual IHttpActionResult Get()
+        public virtual async Task<IHttpActionResult> Get()
         {
-            var items = Service.Get();
+            var items = await Service.GetAsync();
 
             return Ok(items);
         }
 
 
-        public virtual IHttpActionResult Get(TKey id)
+        public virtual async Task<IHttpActionResult> Get(TKey id)
         {
-            var item = Service.Get(id);
+            var item = await Service.GetAsync(id);
 
             if (item == null)
                 return NotFound();
@@ -39,22 +40,22 @@ namespace Altkom.RentalBikes.Service.Controllers
             return Ok(item);
         }
 
-        public virtual IHttpActionResult Post(TItem item)
+        public virtual async Task<IHttpActionResult> Post(TItem item)
         {
-            Service.Add(item);
+            await Service.AddAsync(item);
 
             return CreatedAtRoute("DefaultApi", new { id = item.Id }, item);
         }
 
         [Route("api/{controller}/{id}")]
-        public virtual IHttpActionResult Put(TKey id, TItem item)
+        public virtual async Task<IHttpActionResult> Put(TKey id, TItem item)
         {
-            var foundItem = Service.Get(id);
+            var foundItem = await Service.GetAsync(id);
 
             if (foundItem == null)
                 return NotFound();
 
-            Service.Update(item);
+            await Service.UpdateAsync(item);
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -68,14 +69,14 @@ namespace Altkom.RentalBikes.Service.Controllers
             return StatusCode(HttpStatusCode.Accepted); 
         }
 
-        public virtual IHttpActionResult Delete(TKey id)
+        public virtual async Task<IHttpActionResult> Delete(TKey id)
         {
-            var item = Service.Get(id);
+            var item = await Service.GetAsync(id);
 
             if (item == null)
                 return NotFound();
 
-            Service.Delete(id);
+            await Service.DeleteAsync(id);
 
             return Ok();
         }
