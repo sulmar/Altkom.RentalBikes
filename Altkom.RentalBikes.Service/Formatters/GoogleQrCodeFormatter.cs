@@ -35,7 +35,7 @@ namespace Altkom.RentalBikes.Service.Formatters
         {
             var bike = value as Bike;
 
-            var uri = $"https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl={bike.Number}";
+            var uri = $"https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl={HttpUtility.UrlEncode(bike.Number)}";
 
             using (var client = new WebClient())
             {
