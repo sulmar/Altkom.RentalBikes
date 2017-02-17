@@ -21,9 +21,11 @@ namespace Altkom.RentalBikes.Service.Controllers
         }
 
         
-        public virtual IList<TItem> Get()
+        public virtual IHttpActionResult Get()
         {
-            return Service.Get();
+            var items = Service.Get();
+
+            return Ok(items);
         }
 
 
