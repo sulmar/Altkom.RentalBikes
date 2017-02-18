@@ -404,6 +404,7 @@
     </Compile>
     <Compile Include="Handlers\CustomHeaderHandler.cs" />
     <Compile Include="Handlers\FormatMessageHandler.cs" />
+    <Compile Include="Handlers\MethodOverrideHandler.cs" />
     <Compile Include="Handlers\SecretKeyHandler.cs" />
     <Compile Include="Handlers\TraceHandler.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />

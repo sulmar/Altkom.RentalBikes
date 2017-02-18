@@ -37,6 +37,7 @@ namespace Altkom.RentalBikes.Service
             //   config.MessageHandlers.Add(new SecretKeyHandler());
             config.MessageHandlers.Add(new FormatMessageHandler());
             config.MessageHandlers.Add(new CustomHeaderHandler());
+            config.MessageHandlers.Add(new MethodOverrideHandler());
 
             config.Formatters.Add(new GoogleQrCodeFormatter());
 
