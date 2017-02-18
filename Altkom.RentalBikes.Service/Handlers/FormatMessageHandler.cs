@@ -16,9 +16,10 @@ namespace Altkom.RentalBikes.Service.Handlers
 
             var keyvalue = parameters.FirstOrDefault(s => s.Key == "format");
 
-            request.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(keyvalue.Value, 1));
-
-            //request.RequestUri
+            if (keyvalue.Value != null)
+            {
+                request.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(keyvalue.Value, 1));
+            }
 
             return base.SendAsync(request, cancellationToken);
         }
