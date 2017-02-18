@@ -29,10 +29,10 @@ namespace Altkom.RentalBikes.Service.Controllers
         /// Pobierz rowery
         /// </summary>
         /// <returns></returns>
-        public IList<Bike> Get()
-        {
-            return Service.GetBikes();
-        }
+        //public IList<Bike> Get()
+        //{
+        //    return Service.GetBikes();
+        //}
 
         public Bike GetByNumber([FromUri] string number)
         {
