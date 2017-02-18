@@ -396,6 +396,7 @@
     <Compile Include="Controllers\StationsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Exceptions\UnhandledExceptionLogger.cs" />
     <Compile Include="Filters\ExecutionTimeFilterAttribute.cs" />
     <Compile Include="Filters\ValidationModelStateAttribute.cs" />
     <Compile Include="Formatters\GoogleQrCodeFormatter.cs" />

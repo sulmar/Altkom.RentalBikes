@@ -12,6 +12,8 @@ using FluentValidation.WebApi;
 using Microsoft.Practices.Unity;
 using Altkom.RentalBikes.Interfaces;
 using Altkom.RentalBikes.Services;
+using System.Web.Http.ExceptionHandling;
+using Altkom.RentalBikes.Service.Exceptions;
 
 namespace Altkom.RentalBikes.Service
 {
@@ -43,6 +45,8 @@ namespace Altkom.RentalBikes.Service
 
             config.Filters.Add(new ExecutionTimeFilterAttribute());
             config.Filters.Add(new ValidationModelStateAttribute());
+
+            config.Services.Replace(typeof(IExceptionLogger), new UnhandledExceptionLogger());
 
             // Przykład wstrzykiwania zależności (Dependency Injection)
             var container = new UnityContainer();

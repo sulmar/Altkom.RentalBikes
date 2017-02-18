@@ -13,6 +13,8 @@ namespace Altkom.RentalBikes.Service.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
+            throw new ApplicationException("Custom exception!");
+
             return new string[] { "value1", "value2" };
         }
 
